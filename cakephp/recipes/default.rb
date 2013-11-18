@@ -17,17 +17,33 @@
 # limitations under the License.
 #
 directory node[:cakephp][:tmp_dir] do
-  owner "www-data"
+  owner "deploy"
   group "www-data"
-  mode "0777"
+  mode "0775"
   recursive true
   action :create
 end
 
 directory node[:cakephp][:upload_tmp_dir] do
-  owner "www-data"
+  owner "deploy"
   group "www-data"
-  mode "0777"
+  mode "0775"
   recursive	true
+  action :create
+end
+
+directory node[:cakephp][:upload_dir] do
+  owner "deploy"
+  group "www-data"
+  mode "0775"
+  recursive true
+  action :create
+end
+
+directory node[:cakephp][:resources_dir] do
+  owner "deploy"
+  group "www-data"
+  mode "0775"
+  recursive true
   action :create
 end
