@@ -19,7 +19,7 @@
 directory node[:cakephp][:tmp_dir] do
   owner "deploy"
   group "www-data"
-  mode "0775"
+  mode "0777"
   recursive true
   action :create
 end
@@ -27,7 +27,7 @@ end
 directory node[:cakephp][:upload_tmp_dir] do
   owner "deploy"
   group "www-data"
-  mode "0775"
+  mode "0777"
   recursive	true
   action :create
 end
@@ -35,7 +35,7 @@ end
 directory node[:cakephp][:upload_dir] do
   owner "deploy"
   group "www-data"
-  mode "0775"
+  mode "0777"
   recursive true
   action :create
 end
@@ -43,7 +43,7 @@ end
 directory node[:cakephp][:resources_dir] do
   owner "deploy"
   group "www-data"
-  mode "0775"
+  mode "0777"
   recursive true
   action :create
 end
