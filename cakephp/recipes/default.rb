@@ -16,6 +16,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+template [:cakephp][:config_dir]"database.php" do
+  source "default/database.php.erb"
+  mode 0660
+  group "www-data" 
+  owner "www-data"
+end
+
 directory node[:cakephp][:tmp_dir] do
   mode "0777"
   recursive true
