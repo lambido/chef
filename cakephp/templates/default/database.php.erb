@@ -5,9 +5,9 @@ class DATABASE_CONFIG {
 		'driver' => 'mysql',
 		'persistent' => false,
 		'host' => '<%= node[:cakephp][:db_host] %>',
-		'login' => '%= node[:cakephp][:db_user] %>',
-		'password' => '%= node[:cakephp][:db_pass] %>',
-		'database' => '%= node[:cakephp][:db_name] %>',
+		'login' => '<%= node[:cakephp][:db_user] %>',
+		'password' => '<%= node[:cakephp][:db_pass] %>',
+		'database' => '<%= node[:cakephp][:db_name] %>',
 		'prefix' => '',
 	);
 
