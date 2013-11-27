@@ -22,6 +22,12 @@ directory node[:cakephp][:tmp_dir] do
   action :create
 end
 
+directory node[:cakephp][:log_dir] do
+  mode "0777"
+  recursive true
+  action :create
+end
+
 directory node[:cakephp][:upload_tmp_dir] do
   mode "0777"
   recursive	true
