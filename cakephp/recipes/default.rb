@@ -17,9 +17,16 @@
 # limitations under the License.
 #
 
-template [:cakephp][:config_dir]"database.php" do
+template node[:cakephp][:config_dir]"/database.php" do
   source "default/database.php.erb"
-  mode 0660
+  mode 0644
+  group "www-data" 
+  owner "www-data"
+end
+
+template node[:cakephp][:config_dir]"/s3.php" do
+  source "default/s3.php.erb"
+  mode 0644
   group "www-data" 
   owner "www-data"
 end
