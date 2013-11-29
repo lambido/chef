@@ -19,14 +19,14 @@
 
 template "/srv/www/strainsource/current/src/app/config/database.php" do
   source "database.php.erb"
-  mode 0644
+  mode "0644"
   group "www-data" 
   owner "www-data"
 end
 
 template "/srv/www/strainsource/current/src/app/config/s3.php" do
   source "s3.php.erb"
-  mode 0644
+  mode "0644"
   group "www-data" 
   owner "www-data"
 end
