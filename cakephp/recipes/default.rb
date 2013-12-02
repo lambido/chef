@@ -18,7 +18,7 @@
 #
 
 template "/srv/www/strainsource/current/src/app/config/database.php" do
-  source "/default/database.php.erb"
+  source "database.php.erb"
   mode "0644"
   group "www-data" 
   owner "deploy"
