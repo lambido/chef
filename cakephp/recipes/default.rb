@@ -25,7 +25,7 @@ template "/srv/www/strainsource/current/src/app/config/database.php" do
 end
 
 template "/srv/www/strainsource/current/src/app/config/s3.php" do
-  source "/default/s3.php.erb"
+  source "s3.php.erb"
   mode "0644"
   group "www-data" 
   owner "deploy"
