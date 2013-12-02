@@ -17,20 +17,6 @@
 # limitations under the License.
 #
 
-template "/srv/www/strainsource/current/src/app/config/database.php" do
-  source "database.php.erb"
-  mode "0644"
-  group "www-data" 
-  owner "deploy"
-end
-
-template "/srv/www/strainsource/current/src/app/config/s3.php" do
-  source "s3.php.erb"
-  mode "0644"
-  group "www-data" 
-  owner "deploy"
-end
-
 directory node[:cakephp][:tmp_dir] do
   mode "0777"
   recursive true
@@ -59,4 +45,18 @@ directory node[:cakephp][:resources_dir] do
   mode "0777"
   recursive true
   action :create
+end
+
+template "/srv/www/strainsource/current/src/app/config/database.php" do
+  source "database.php.erb"
+  mode "0644"
+  group "www-data" 
+  owner "deploy"
+end
+
+template "/srv/www/strainsource/current/src/app/config/s3.php" do
+  source "s3.php.erb"
+  mode "0644"
+  group "www-data" 
+  owner "deploy"
 end
