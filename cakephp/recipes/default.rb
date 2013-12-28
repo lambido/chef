@@ -16,7 +16,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 directory node[:cakephp][:tmp_dir] do
   mode "0777"
   recursive true
@@ -31,7 +30,7 @@ end
 
 directory node[:cakephp][:upload_tmp_dir] do
   mode "0777"
-  recursive	true
+  recursive true
   action :create
 end
 
@@ -47,14 +46,19 @@ directory node[:cakephp][:resources_dir] do
   action :create
 end
 
-template "/srv/www/strainsource/current/src/app/config/database.php" do
+directory default[:cakephp][:config_dir] do
+  recursive true
+  action :create
+end
+
+template "/mnt/srv/www/strainsource/current/src/app/config/database.php" do
   source "database.php.erb"
   mode "0644"
   group "www-data" 
   owner "deploy"
 end
 
-template "/srv/www/strainsource/current/src/app/config/s3.php" do
+template "/mnt/srv/www/strainsource/current/src/app/config/s3.php" do
   source "s3.php.erb"
   mode "0644"
   group "www-data" 
