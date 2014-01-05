@@ -46,7 +46,7 @@ directory node[:cakephp][:resources_dir] do
   action :create
 end
 
-directory default[:cakephp][:config_dir] do
+directory node[:cakephp][:config_dir] do
   recursive true
   action :create
 end
